@@ -1,4 +1,4 @@
-# [Java][Spring] Dream Case App - Restful APIs
+# [Java][Spring] Dream Case App - Restful API
 
 ## Objectif
 
@@ -50,9 +50,9 @@ Chaque case doit avoir les informations suivantes :
 
 ## Durée de réalisation 
 
-La développement de ce mini projet est estimé à 1H15
+- Le développement de ce mini projet est estimé à 1H15
 
 ## Références
 
-=> https://spring.io/projects/spring-boot
-=> https://www.javatpoint.com/restful-web-services-spring-boot
+- https://spring.io/projects/spring-boot
+- https://www.javatpoint.com/restful-web-services-spring-boot
