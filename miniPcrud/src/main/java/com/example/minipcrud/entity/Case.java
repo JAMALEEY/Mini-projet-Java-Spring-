@@ -1,5 +1,8 @@
 package com.example.minipcrud.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,10 +18,12 @@ public class Case {
     private Long caseId;
 
     // Date de création du case
+    @CreationTimestamp
     @Column(name = "creationDate")
     private Date creationDate;
 
     //Date de modification du case
+    @UpdateTimestamp
     @Column(name = "lastUpdateDate")
     private Date lastUpdateDate;
 

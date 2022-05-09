@@ -47,11 +47,14 @@ public class CasesRestControler {
     }
 
     // Add mapping for Update (PUT method)
-@PutMapping("/{caseId}")
-    public Case updateCase(@RequestBody Case theCase){
-        caseService.saveCase(theCase);
-        return theCase;
-}
+    @PutMapping("/{caseId}")
+    public Case updateCase(@RequestBody Case theCase, @PathVariable Long caseId ){
+        theCase.setCaseId(caseId);
+        theCase.setCreationDate(caseService.readOneCase(caseId).getCreationDate());
+        return caseService.saveCase(theCase);
+//        return theCase;
+    }
+
     // Add mapping for Delete (DELETE method).
     @DeleteMapping("/{caseId}")
     // the caseId should match the @PathVariable idCase name

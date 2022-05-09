@@ -25,8 +25,8 @@ public class CaseServiceImpl implements CaseService{
     }
 
     @Override
-    public void saveCase(Case theCase) {
-        caseRepository.save(theCase);
+    public Case saveCase(Case theCase) {
+        return caseRepository.save(theCase);
     }
 
     // working with Optional (introduced in java8)
