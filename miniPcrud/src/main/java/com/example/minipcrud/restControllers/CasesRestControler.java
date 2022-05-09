@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/cases")
 public class CasesRestControler {
     private CaseService caseService;
 
@@ -19,7 +19,7 @@ public class CasesRestControler {
     }
 
     //  Add mapping for Create (POST method)
-    @PostMapping("/cases")
+    @PostMapping
     public Case createCase(@RequestBody Case theCase){
         // what to do if we pass an id in the body ? we hard code the id to be null so that it dosent update an already existant id
         theCase.setCaseId(null);
@@ -29,13 +29,13 @@ public class CasesRestControler {
 
 
     // Add mapping for testing all cases
-    @GetMapping("/cases")
+    @GetMapping
     public List<Case> findAll(){
         return caseService.findAll();
     }
 
     //  Add mapping for Read (GET method)
-    @GetMapping("/cases/{caseId}")
+    @GetMapping("/{caseId}")
     public Case readOneCase(@PathVariable Long caseId){
         Case theCase = caseService.readOneCase(caseId);
         if (theCase == null) {
@@ -47,13 +47,13 @@ public class CasesRestControler {
     }
 
     // Add mapping for Update (PUT method)
-@PutMapping("/cases/{caseId}")
+@PutMapping("/{caseId}")
     public Case updateCase(@RequestBody Case theCase){
         caseService.saveCase(theCase);
         return theCase;
 }
     // Add mapping for Delete (DELETE method).
-    @DeleteMapping("/cases/{caseId}")
+    @DeleteMapping("/{caseId}")
     // the caseId should match the @PathVariable idCase name
     public String deleteCase(@PathVariable Long caseId) {
         Case theCase = caseService.readOneCase(caseId);
