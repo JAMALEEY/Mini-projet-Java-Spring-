@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  db:
+    image: mysql
+    container_name: mini-projet-java-spring-container
+    privileged: true
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3302:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: MINI_PROJET_JAVA_SPRING
+    volumes:
+      - ./storage:/var/lib/mysql
